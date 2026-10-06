@@ -80,7 +80,8 @@
       box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
     }
 
-    .phone video {
+    .phone video,
+    .phone img {
       display: block;
       width: 100%;
       height: auto;
@@ -106,6 +107,23 @@
       border-radius: 38px;
       background: #333;
     }
+
+    /* Settings screenshot beside a list of what can be customized */
+    .controls {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 24px 16px 48px;
+      display: flex;
+      align-items: center;
+      gap: 56px;
+    }
+
+    .controls h2 {
+      font-size: 1.8rem;
+      margin: 0 0 12px;
+    }
+
+    .controls .text > p:first-of-type { color: var(--muted); }
 
     .ipad {
       max-width: 1000px;
@@ -222,11 +240,13 @@
 
     /* Stack the text above the phone on narrow screens */
     @media (max-width: 760px) {
-      main {
+      main,
+      .controls {
         flex-direction: column;
         text-align: center;
         gap: 40px;
       }
+      .controls .phone { order: 1; }
       .text ul {
         display: inline-block;
         text-align: left;
@@ -244,16 +264,16 @@
       <ul>
         <li>Tap the rower to start/stop</li>
         <li>Edit settings under the gear</li>
+        <li>Change characters via the grid</li>
         <li>Use Siri to start/stop or adjust stroke rate hands-free!</li>
       </ul>
       <p class="store">Coming soon to the Apple App Store.</p>
     </div>
 
     <div class="phone">
-      <!-- iPhone screen recording; keep it in the same folder as this page.
-           type="video/mp4" lets non-Safari browsers play the H.264 .mov file. -->
+      <!-- iPhone screen recording; keep it in the same folder as this page. -->
       <video autoplay muted loop playsinline poster="iphone_2_vert.png" aria-label="RowBoRow on iPhone">
-        <source src="iphone_5_video.mov" type="video/mp4">
+        <source src="iphone_6_video.mp4" type="video/mp4">
       </video>
     </div>
   </main>
@@ -262,17 +282,27 @@
     <img src="iphone_4_horiz.png" alt="RowBoRow on iPhone in landscape">
   </div>
 
-  <section class="ipad">
-    <h2>Use with ErgData and ErgZone</h2>
-    <p>On an iPad, RowBoRow can be pulled up in a small window allowing you to follow along while still using other rowing apps such as ErgData or ErgZone.</p>
-    <div class="tablet">
-      <img src="ipad_1.png" alt="RowBoRow on iPad">
+  <section class="controls" id="controls">
+    <div class="phone">
+      <img src="controls.png" alt="RowBoRow settings panel on iPhone" loading="lazy">
+    </div>
+
+    <div class="text">
+      <h2>Controls</h2>
+      <p>Tap the gear to make RowBoRow your own.</p>
+      <ul>
+        <li><strong>Stroke Rate</strong> – set your target strokes per minute</li>
+        <li><strong>Drive Ratio</strong> – adjust how long the recovery lasts compared to the drive</li>
+        <li><strong>Facing</strong> – have the rower face left or right</li>
+        <li><strong>Display Stats</strong> – show or hide elapsed time, stroke rate and stroke count</li>
+        <li><strong>Foreground &amp; Background</strong> – pick any colors you like, or tap Reset Colors to go back to the defaults</li>
+      </ul>
     </div>
   </section>
 
   <section class="characters" id="characters">
     <h2>Character Options -- UNDER DEVELOPMENT!</h2>
-    <p>Pick from a variety of characters to row along with, from a classic stick figure to a pirate, a dragon or even a rowing T. rex!</p>
+    <p>Pick from a variety of characters to row along with, from a classic stick figure to a pirate, a dragon or even a rowing T. rex! Prefer something simpler? Choose a meter like a battery, a thermometer or a steaming mug.</p>
     <div class="character-grid">
       <img src="rower_images/stick_figure.png" alt="Stick figure" loading="lazy">
       <img src="rower_images/stick_figure_man.png" alt="Stick figure man" loading="lazy">
@@ -294,6 +324,20 @@
       <img src="rower_images/vampire.png" alt="Vampire" loading="lazy">
       <img src="rower_images/viking.png" alt="Viking" loading="lazy">
       <img src="rower_images/wizard.png" alt="Wizard" loading="lazy">
+      <img src="rower_images/battery.png" alt="Battery" loading="lazy">
+      <img src="rower_images/fuel_gauge.png" alt="Fuel gauge" loading="lazy">
+      <img src="rower_images/mug.png" alt="Steaming mug" loading="lazy">
+      <img src="rower_images/progress_bar.png" alt="Progress bar" loading="lazy">
+      <img src="rower_images/thermometer.png" alt="Thermometer" loading="lazy">
+      <img src="rower_images/wifi_bars.png" alt="Wi-Fi bars" loading="lazy">
+    </div>
+  </section>
+
+  <section class="ipad">
+    <h2>Use with ErgData and ErgZone</h2>
+    <p>On an iPad, RowBoRow can be pulled up in a small window allowing you to follow along while still using other rowing apps such as ErgData or ErgZone.</p>
+    <div class="tablet">
+      <img src="ipad_1.png" alt="RowBoRow on iPad">
     </div>
   </section>
 
