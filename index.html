@@ -5,12 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RowBoRow</title>
   <meta name="description" content="RowBoRow helps indoor rowers set a stroke rate and follow it without drifting.">
+  <link rel="canonical" href="https://raybowers.github.io/RowBoRow/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="RowBoRow">
+  <meta property="og:title" content="RowBoRow">
+  <meta property="og:description" content="Set your stroke rate and follow along! RowBoRow helps indoor rowers hold a steady stroke rate without drifting.">
+  <meta property="og:url" content="https://raybowers.github.io/RowBoRow/">
+  <meta property="og:image" content="https://raybowers.github.io/RowBoRow/og-image.png">
+  <meta property="og:image:alt" content="RowBoRow on iPhone in landscape">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="RowBoRow">
+  <meta name="twitter:description" content="Set your stroke rate and follow along!">
+  <meta name="twitter:image" content="https://raybowers.github.io/RowBoRow/og-image.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <style>
     :root {
       --bg: #f6f8fb;
       --text: #1b2430;
       --muted: #5b6676;
-      --accent: #1f6feb;
+      --accent: #1559c7;
       --phone: #111;
     }
     @media (prefers-color-scheme: dark) {
@@ -24,6 +38,12 @@
     }
 
     * { box-sizing: border-box; }
+
+    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
 
     body {
       margin: 0;
@@ -174,6 +194,19 @@
       margin: 0 0 12px;
     }
 
+    .badge {
+      display: inline-block;
+      margin-left: 8px;
+      padding: 2px 12px;
+      border: 2px solid var(--accent);
+      border-radius: 999px;
+      color: var(--accent);
+      font-size: 0.75rem;
+      font-weight: 600;
+      vertical-align: middle;
+      white-space: nowrap;
+    }
+
     .characters p {
       max-width: 600px;
       margin: 0 auto 24px;
@@ -215,6 +248,10 @@
     }
 
     .privacy p strong { color: var(--text); }
+
+    .privacy a { color: var(--accent); }
+
+    .privacy p + p { margin-top: 12px; }
 
     /* Pill-shaped badge echoing the App Store privacy label */
     .privacy .privacy-label {
@@ -272,19 +309,19 @@
 
     <div class="phone">
       <!-- iPhone screen recording; keep it in the same folder as this page. -->
-      <video autoplay muted loop playsinline poster="iphone_2_vert.png" aria-label="RowBoRow on iPhone">
+      <video autoplay muted loop playsinline preload="metadata" width="540" height="1174" poster="iphone_2_vert.png" aria-label="RowBoRow on iPhone">
         <source src="iphone_6_video.mp4" type="video/mp4">
       </video>
     </div>
   </main>
 
   <div class="phone-horiz">
-    <img src="iphone_4_horiz.png" alt="RowBoRow on iPhone in landscape">
+    <img src="iphone_4_horiz.png" width="1400" height="644" alt="RowBoRow on iPhone in landscape">
   </div>
 
   <section class="controls" id="controls">
     <div class="phone">
-      <img src="controls.png" alt="RowBoRow settings panel on iPhone" loading="lazy">
+      <img src="controls.png" width="640" height="1391" alt="RowBoRow settings panel on iPhone" loading="lazy">
     </div>
 
     <div class="text">
@@ -301,35 +338,35 @@
   </section>
 
   <section class="characters" id="characters">
-    <h2>Character Options -- UNDER DEVELOPMENT!</h2>
+    <h2>Character Options <span class="badge">Coming soon</span></h2>
     <p>Pick from a variety of characters to row along with, from a classic stick figure to a pirate, a dragon or even a rowing T. rex! Prefer something simpler? Choose a meter like a battery, a thermometer or a steaming mug.</p>
     <div class="character-grid">
-      <img src="rower_images/stick_figure.png" alt="Stick figure" loading="lazy">
-      <img src="rower_images/stick_figure_man.png" alt="Stick figure man" loading="lazy">
-      <img src="rower_images/stick_figure_woman.png" alt="Stick figure woman" loading="lazy">
-      <img src="rower_images/alien.png" alt="Alien" loading="lazy">
-      <img src="rower_images/dragon.png" alt="Dragon" loading="lazy">
-      <img src="rower_images/frog.png" alt="Frog" loading="lazy">
-      <img src="rower_images/ghost.png" alt="Ghost" loading="lazy">
-      <img src="rower_images/grandpa.png" alt="Grandpa" loading="lazy">
-      <img src="rower_images/knight.png" alt="Knight" loading="lazy">
-      <img src="rower_images/mummy.png" alt="Mummy" loading="lazy">
-      <img src="rower_images/octopus.png" alt="Octopus" loading="lazy">
-      <img src="rower_images/penguin.png" alt="Penguin" loading="lazy">
-      <img src="rower_images/pirate.png" alt="Pirate" loading="lazy">
-      <img src="rower_images/robot.png" alt="Robot" loading="lazy">
-      <img src="rower_images/skeleton.png" alt="Skeleton" loading="lazy">
-      <img src="rower_images/snowman.png" alt="Snowman" loading="lazy">
-      <img src="rower_images/t_rex.png" alt="T. rex" loading="lazy">
-      <img src="rower_images/vampire.png" alt="Vampire" loading="lazy">
-      <img src="rower_images/viking.png" alt="Viking" loading="lazy">
-      <img src="rower_images/wizard.png" alt="Wizard" loading="lazy">
-      <img src="rower_images/battery.png" alt="Battery" loading="lazy">
-      <img src="rower_images/fuel_gauge.png" alt="Fuel gauge" loading="lazy">
-      <img src="rower_images/mug.png" alt="Steaming mug" loading="lazy">
-      <img src="rower_images/progress_bar.png" alt="Progress bar" loading="lazy">
-      <img src="rower_images/thermometer.png" alt="Thermometer" loading="lazy">
-      <img src="rower_images/wifi_bars.png" alt="Wi-Fi bars" loading="lazy">
+      <img src="rower_images/stick_figure.png" width="500" height="500" alt="Stick figure" loading="lazy">
+      <img src="rower_images/stick_figure_man.png" width="500" height="500" alt="Stick figure man" loading="lazy">
+      <img src="rower_images/stick_figure_woman.png" width="500" height="500" alt="Stick figure woman" loading="lazy">
+      <img src="rower_images/alien.png" width="500" height="500" alt="Alien" loading="lazy">
+      <img src="rower_images/dragon.png" width="500" height="500" alt="Dragon" loading="lazy">
+      <img src="rower_images/frog.png" width="500" height="500" alt="Frog" loading="lazy">
+      <img src="rower_images/ghost.png" width="500" height="500" alt="Ghost" loading="lazy">
+      <img src="rower_images/grandpa.png" width="500" height="500" alt="Grandpa" loading="lazy">
+      <img src="rower_images/knight.png" width="500" height="500" alt="Knight" loading="lazy">
+      <img src="rower_images/mummy.png" width="500" height="500" alt="Mummy" loading="lazy">
+      <img src="rower_images/octopus.png" width="500" height="500" alt="Octopus" loading="lazy">
+      <img src="rower_images/penguin.png" width="500" height="500" alt="Penguin" loading="lazy">
+      <img src="rower_images/pirate.png" width="500" height="500" alt="Pirate" loading="lazy">
+      <img src="rower_images/robot.png" width="500" height="500" alt="Robot" loading="lazy">
+      <img src="rower_images/skeleton.png" width="500" height="500" alt="Skeleton" loading="lazy">
+      <img src="rower_images/snowman.png" width="500" height="500" alt="Snowman" loading="lazy">
+      <img src="rower_images/t_rex.png" width="500" height="500" alt="T. rex" loading="lazy">
+      <img src="rower_images/vampire.png" width="500" height="500" alt="Vampire" loading="lazy">
+      <img src="rower_images/viking.png" width="500" height="500" alt="Viking" loading="lazy">
+      <img src="rower_images/wizard.png" width="500" height="500" alt="Wizard" loading="lazy">
+      <img src="rower_images/battery.png" width="500" height="500" alt="Battery" loading="lazy">
+      <img src="rower_images/fuel_gauge.png" width="500" height="500" alt="Fuel gauge" loading="lazy">
+      <img src="rower_images/mug.png" width="500" height="500" alt="Steaming mug" loading="lazy">
+      <img src="rower_images/progress_bar.png" width="500" height="500" alt="Progress bar" loading="lazy">
+      <img src="rower_images/thermometer.png" width="500" height="500" alt="Thermometer" loading="lazy">
+      <img src="rower_images/wifi_bars.png" width="500" height="500" alt="Wi-Fi bars" loading="lazy">
     </div>
   </section>
 
@@ -337,7 +374,7 @@
     <h2>Use with ErgData and ErgZone</h2>
     <p>On an iPad, RowBoRow can run in a window allowing you to follow along while using other rowing apps such as ErgData or ErgZone.</p>
     <div class="tablet">
-      <img src="ipad_1.png" alt="RowBoRow on iPad">
+      <img src="ipad_1.png" width="1400" height="973" alt="RowBoRow on iPad">
     </div>
   </section>
 
@@ -346,11 +383,21 @@
     <p class="privacy-label">&#10003; Data Not Collected</p>
     <p><strong>RowBoRow does not collect any data.</strong> There are no accounts, ads, analytics or tracking. 
       Your settings stay on your device and are never sent anywhere. It is simply an animated rower to follow along with.</p>
+    <p><a href="privacy.html">Read the full privacy policy</a></p>
   </section>
 
   <footer>
-    <p><a href="mailto:ray@bowers.com?subject=RowBoRow">ray@bowers.com</a></p>
+    <p><a href="support.html">Support</a> &middot; <a href="privacy.html">Privacy Policy</a> &middot; <a href="mailto:ray@bowers.com?subject=RowBoRow">ray@bowers.com</a></p>
     &copy; 2026 RowBoRow.com
   </footer>
+  <script>
+    // Respect reduced-motion: show the poster and let the viewer press play.
+    var vid = document.querySelector('.phone video');
+    if (vid && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      vid.removeAttribute('autoplay');
+      vid.pause();
+      vid.controls = true;
+    }
+  </script>
 </body>
 </html>
