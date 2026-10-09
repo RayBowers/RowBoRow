@@ -10,18 +10,21 @@ import json
 import re
 import sys
 
-TILE = """        <video
-          src="rower_videos/{file}.mp4"
-          poster="rower_images/{file}.png"
-          width="500"
-          height="500"
-          aria-label="{label}"
-          role="img"
-          muted
-          loop
-          playsinline
-          preload="none"
-        ></video>
+TILE = """        <figure>
+          <video
+            src="rower_videos/{file}.mp4"
+            poster="rower_images/{file}.png"
+            width="500"
+            height="500"
+            aria-label="{label}"
+            role="img"
+            muted
+            loop
+            playsinline
+            preload="none"
+          ></video>
+          <figcaption>{label}</figcaption>
+        </figure>
 """
 
 manifest = json.load(open(sys.argv[1]))

@@ -150,7 +150,7 @@
         box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
       }
 
-      .phone-horiz img {
+      .phone-horiz video {
         display: block;
         width: 100%;
         height: auto;
@@ -257,6 +257,16 @@
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
         gap: 16px;
+      }
+
+      .character-grid figure {
+        margin: 0;
+      }
+
+      .character-grid figcaption {
+        margin-top: 8px;
+        font-size: 0.9rem;
+        color: var(--muted);
       }
 
       .character-grid video {
@@ -375,21 +385,28 @@
           preload="metadata"
           width="540"
           height="1174"
-          poster="screen_shots/iphone_2_vert.png"
+          poster="screen_shots/main_vertical.png"
           aria-label="RowBoRow on iPhone"
         >
-          <source src="screen_shots/iphone_6_video.mp4" type="video/mp4" />
+          <source src="screen_shots/main_vertical.mp4" type="video/mp4" />
         </video>
       </div>
     </main>
 
     <div class="phone-horiz">
-      <img
-        src="screen_shots/iphone_4_horiz.png"
-        width="1400"
-        height="644"
-        alt="RowBoRow on iPhone in landscape"
-      />
+      <video
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        width="1200"
+        height="552"
+        poster="screen_shots/main_horizontal.png"
+        aria-label="RowBoRow on iPhone in landscape"
+      >
+        <source src="screen_shots/main_horizontal.mp4" type="video/mp4" />
+      </video>
     </div>
 
     <section class="characters" id="characters">
@@ -402,363 +419,447 @@
       </p>
       <h3 class="character-category">Free</h3>
       <div class="character-grid">
-        <video
-          src="rower_videos/stick_figure.mp4"
-          poster="rower_images/stick_figure.png"
-          width="500"
-          height="500"
-          aria-label="Stick Figure"
-          role="img"
-          muted
-          loop
-          playsinline
-          preload="none"
-        ></video>
-        <video
-          src="rower_videos/handle_vertical.mp4"
-          poster="rower_images/handle_vertical.png"
-          width="500"
-          height="500"
-          aria-label="Handle, vertical"
-          role="img"
-          muted
-          loop
-          playsinline
-          preload="none"
-        ></video>
-        <video
-          src="rower_videos/handle_horizontal.mp4"
-          poster="rower_images/handle_horizontal.png"
-          width="500"
-          height="500"
-          aria-label="Handle, horizontal"
-          role="img"
-          muted
-          loop
-          playsinline
-          preload="none"
-        ></video>
+        <figure>
+          <video
+            src="rower_videos/stick_figure.mp4"
+            poster="rower_images/stick_figure.png"
+            width="500"
+            height="500"
+            aria-label="Stick Figure"
+            role="img"
+            muted
+            loop
+            playsinline
+            preload="none"
+          ></video>
+          <figcaption>Stick Figure</figcaption>
+        </figure>
+        <figure>
+          <video
+            src="rower_videos/handle_vertical.mp4"
+            poster="rower_images/handle_vertical.png"
+            width="500"
+            height="500"
+            aria-label="Handle, vertical"
+            role="img"
+            muted
+            loop
+            playsinline
+            preload="none"
+          ></video>
+          <figcaption>Handle, vertical</figcaption>
+        </figure>
+        <figure>
+          <video
+            src="rower_videos/handle_horizontal.mp4"
+            poster="rower_images/handle_horizontal.png"
+            width="500"
+            height="500"
+            aria-label="Handle, horizontal"
+            role="img"
+            muted
+            loop
+            playsinline
+            preload="none"
+          ></video>
+          <figcaption>Handle, horizontal</figcaption>
+        </figure>
       </div>
       <h3 class="character-category">People</h3>
       <div class="character-grid">
-        <video
-          src="rower_videos/man.mp4"
-          poster="rower_images/man.png"
-          width="500"
-          height="500"
-          aria-label="Man"
-          role="img"
-          muted
-          loop
-          playsinline
-          preload="none"
-        ></video>
-        <video
-          src="rower_videos/woman.mp4"
-          poster="rower_images/woman.png"
-          width="500"
-          height="500"
-          aria-label="Woman"
-          role="img"
-          muted
-          loop
-          playsinline
-          preload="none"
-        ></video>
-        <video
-          src="rower_videos/grandpa.mp4"
-          poster="rower_images/grandpa.png"
-          width="500"
-          height="500"
-          aria-label="Grandpa"
-          role="img"
-          muted
-          loop
-          playsinline
-          preload="none"
-        ></video>
+        <figure>
+          <video
+            src="rower_videos/man.mp4"
+            poster="rower_images/man.png"
+            width="500"
+            height="500"
+            aria-label="Man"
+            role="img"
+            muted
+            loop
+            playsinline
+            preload="none"
+          ></video>
+          <figcaption>Man</figcaption>
+        </figure>
+        <figure>
+          <video
+            src="rower_videos/woman.mp4"
+            poster="rower_images/woman.png"
+            width="500"
+            height="500"
+            aria-label="Woman"
+            role="img"
+            muted
+            loop
+            playsinline
+            preload="none"
+          ></video>
+          <figcaption>Woman</figcaption>
+        </figure>
+        <figure>
+          <video
+            src="rower_videos/grandpa.mp4"
+            poster="rower_images/grandpa.png"
+            width="500"
+            height="500"
+            aria-label="Grandpa"
+            role="img"
+            muted
+            loop
+            playsinline
+            preload="none"
+          ></video>
+          <figcaption>Grandpa</figcaption>
+        </figure>
       </div>
       <h3 class="character-category">Adventurers</h3>
       <div class="character-grid">
-        <video
-          src="rower_videos/pirate.mp4"
-          poster="rower_images/pirate.png"
-          width="500"
-          height="500"
-          aria-label="Pirate"
-          role="img"
-          muted
-          loop
-          playsinline
-          preload="none"
-        ></video>
-        <video
-          src="rower_videos/knight.mp4"
-          poster="rower_images/knight.png"
-          width="500"
-          height="500"
-          aria-label="Knight"
-          role="img"
-          muted
-          loop
-          playsinline
-          preload="none"
-        ></video>
-        <video
-          src="rower_videos/viking.mp4"
-          poster="rower_images/viking.png"
-          width="500"
-          height="500"
-          aria-label="Viking"
-          role="img"
-          muted
-          loop
-          playsinline
-          preload="none"
-        ></video>
-        <video
-          src="rower_videos/wizard.mp4"
-          poster="rower_images/wizard.png"
-          width="500"
-          height="500"
-          aria-label="Wizard"
-          role="img"
-          muted
-          loop
-          playsinline
-          preload="none"
-        ></video>
+        <figure>
+          <video
+            src="rower_videos/pirate.mp4"
+            poster="rower_images/pirate.png"
+            width="500"
+            height="500"
+            aria-label="Pirate"
+            role="img"
+            muted
+            loop
+            playsinline
+            preload="none"
+          ></video>
+          <figcaption>Pirate</figcaption>
+        </figure>
+        <figure>
+          <video
+            src="rower_videos/knight.mp4"
+            poster="rower_images/knight.png"
+            width="500"
+            height="500"
+            aria-label="Knight"
+            role="img"
+            muted
+            loop
+            playsinline
+            preload="none"
+          ></video>
+          <figcaption>Knight</figcaption>
+        </figure>
+        <figure>
+          <video
+            src="rower_videos/viking.mp4"
+            poster="rower_images/viking.png"
+            width="500"
+            height="500"
+            aria-label="Viking"
+            role="img"
+            muted
+            loop
+            playsinline
+            preload="none"
+          ></video>
+          <figcaption>Viking</figcaption>
+        </figure>
+        <figure>
+          <video
+            src="rower_videos/wizard.mp4"
+            poster="rower_images/wizard.png"
+            width="500"
+            height="500"
+            aria-label="Wizard"
+            role="img"
+            muted
+            loop
+            playsinline
+            preload="none"
+          ></video>
+          <figcaption>Wizard</figcaption>
+        </figure>
       </div>
       <h3 class="character-category">Spooky</h3>
       <div class="character-grid">
-        <video
-          src="rower_videos/mummy.mp4"
-          poster="rower_images/mummy.png"
-          width="500"
-          height="500"
-          aria-label="Mummy"
-          role="img"
-          muted
-          loop
-          playsinline
-          preload="none"
-        ></video>
-        <video
-          src="rower_videos/skeleton.mp4"
-          poster="rower_images/skeleton.png"
-          width="500"
-          height="500"
-          aria-label="Skeleton"
-          role="img"
-          muted
-          loop
-          playsinline
-          preload="none"
-        ></video>
-        <video
-          src="rower_videos/ghost.mp4"
-          poster="rower_images/ghost.png"
-          width="500"
-          height="500"
-          aria-label="Ghost"
-          role="img"
-          muted
-          loop
-          playsinline
-          preload="none"
-        ></video>
-        <video
-          src="rower_videos/vampire.mp4"
-          poster="rower_images/vampire.png"
-          width="500"
-          height="500"
-          aria-label="Vampire"
-          role="img"
-          muted
-          loop
-          playsinline
-          preload="none"
-        ></video>
+        <figure>
+          <video
+            src="rower_videos/mummy.mp4"
+            poster="rower_images/mummy.png"
+            width="500"
+            height="500"
+            aria-label="Mummy"
+            role="img"
+            muted
+            loop
+            playsinline
+            preload="none"
+          ></video>
+          <figcaption>Mummy</figcaption>
+        </figure>
+        <figure>
+          <video
+            src="rower_videos/skeleton.mp4"
+            poster="rower_images/skeleton.png"
+            width="500"
+            height="500"
+            aria-label="Skeleton"
+            role="img"
+            muted
+            loop
+            playsinline
+            preload="none"
+          ></video>
+          <figcaption>Skeleton</figcaption>
+        </figure>
+        <figure>
+          <video
+            src="rower_videos/ghost.mp4"
+            poster="rower_images/ghost.png"
+            width="500"
+            height="500"
+            aria-label="Ghost"
+            role="img"
+            muted
+            loop
+            playsinline
+            preload="none"
+          ></video>
+          <figcaption>Ghost</figcaption>
+        </figure>
+        <figure>
+          <video
+            src="rower_videos/vampire.mp4"
+            poster="rower_images/vampire.png"
+            width="500"
+            height="500"
+            aria-label="Vampire"
+            role="img"
+            muted
+            loop
+            playsinline
+            preload="none"
+          ></video>
+          <figcaption>Vampire</figcaption>
+        </figure>
       </div>
       <h3 class="character-category">Fantasy</h3>
       <div class="character-grid">
-        <video
-          src="rower_videos/snowman.mp4"
-          poster="rower_images/snowman.png"
-          width="500"
-          height="500"
-          aria-label="Snowman"
-          role="img"
-          muted
-          loop
-          playsinline
-          preload="none"
-        ></video>
-        <video
-          src="rower_videos/dragon.mp4"
-          poster="rower_images/dragon.png"
-          width="500"
-          height="500"
-          aria-label="Dragon"
-          role="img"
-          muted
-          loop
-          playsinline
-          preload="none"
-        ></video>
+        <figure>
+          <video
+            src="rower_videos/snowman.mp4"
+            poster="rower_images/snowman.png"
+            width="500"
+            height="500"
+            aria-label="Snowman"
+            role="img"
+            muted
+            loop
+            playsinline
+            preload="none"
+          ></video>
+          <figcaption>Snowman</figcaption>
+        </figure>
+        <figure>
+          <video
+            src="rower_videos/dragon.mp4"
+            poster="rower_images/dragon.png"
+            width="500"
+            height="500"
+            aria-label="Dragon"
+            role="img"
+            muted
+            loop
+            playsinline
+            preload="none"
+          ></video>
+          <figcaption>Dragon</figcaption>
+        </figure>
       </div>
       <h3 class="character-category">Animals</h3>
       <div class="character-grid">
-        <video
-          src="rower_videos/t_rex.mp4"
-          poster="rower_images/t_rex.png"
-          width="500"
-          height="500"
-          aria-label="T. rex"
-          role="img"
-          muted
-          loop
-          playsinline
-          preload="none"
-        ></video>
-        <video
-          src="rower_videos/octopus.mp4"
-          poster="rower_images/octopus.png"
-          width="500"
-          height="500"
-          aria-label="Octopus"
-          role="img"
-          muted
-          loop
-          playsinline
-          preload="none"
-        ></video>
-        <video
-          src="rower_videos/penguin.mp4"
-          poster="rower_images/penguin.png"
-          width="500"
-          height="500"
-          aria-label="Penguin"
-          role="img"
-          muted
-          loop
-          playsinline
-          preload="none"
-        ></video>
-        <video
-          src="rower_videos/frog.mp4"
-          poster="rower_images/frog.png"
-          width="500"
-          height="500"
-          aria-label="Frog"
-          role="img"
-          muted
-          loop
-          playsinline
-          preload="none"
-        ></video>
+        <figure>
+          <video
+            src="rower_videos/t_rex.mp4"
+            poster="rower_images/t_rex.png"
+            width="500"
+            height="500"
+            aria-label="T. rex"
+            role="img"
+            muted
+            loop
+            playsinline
+            preload="none"
+          ></video>
+          <figcaption>T. rex</figcaption>
+        </figure>
+        <figure>
+          <video
+            src="rower_videos/octopus.mp4"
+            poster="rower_images/octopus.png"
+            width="500"
+            height="500"
+            aria-label="Octopus"
+            role="img"
+            muted
+            loop
+            playsinline
+            preload="none"
+          ></video>
+          <figcaption>Octopus</figcaption>
+        </figure>
+        <figure>
+          <video
+            src="rower_videos/penguin.mp4"
+            poster="rower_images/penguin.png"
+            width="500"
+            height="500"
+            aria-label="Penguin"
+            role="img"
+            muted
+            loop
+            playsinline
+            preload="none"
+          ></video>
+          <figcaption>Penguin</figcaption>
+        </figure>
+        <figure>
+          <video
+            src="rower_videos/frog.mp4"
+            poster="rower_images/frog.png"
+            width="500"
+            height="500"
+            aria-label="Frog"
+            role="img"
+            muted
+            loop
+            playsinline
+            preload="none"
+          ></video>
+          <figcaption>Frog</figcaption>
+        </figure>
       </div>
       <h3 class="character-category">Sci-Fi</h3>
       <div class="character-grid">
-        <video
-          src="rower_videos/robot.mp4"
-          poster="rower_images/robot.png"
-          width="500"
-          height="500"
-          aria-label="Robot"
-          role="img"
-          muted
-          loop
-          playsinline
-          preload="none"
-        ></video>
-        <video
-          src="rower_videos/alien.mp4"
-          poster="rower_images/alien.png"
-          width="500"
-          height="500"
-          aria-label="Alien"
-          role="img"
-          muted
-          loop
-          playsinline
-          preload="none"
-        ></video>
+        <figure>
+          <video
+            src="rower_videos/robot.mp4"
+            poster="rower_images/robot.png"
+            width="500"
+            height="500"
+            aria-label="Robot"
+            role="img"
+            muted
+            loop
+            playsinline
+            preload="none"
+          ></video>
+          <figcaption>Robot</figcaption>
+        </figure>
+        <figure>
+          <video
+            src="rower_videos/alien.mp4"
+            poster="rower_images/alien.png"
+            width="500"
+            height="500"
+            aria-label="Alien"
+            role="img"
+            muted
+            loop
+            playsinline
+            preload="none"
+          ></video>
+          <figcaption>Alien</figcaption>
+        </figure>
       </div>
       <h3 class="character-category">Gadgets</h3>
       <div class="character-grid">
-        <video
-          src="rower_videos/wifi_bars.mp4"
-          poster="rower_images/wifi_bars.png"
-          width="500"
-          height="500"
-          aria-label="WiFi Bars"
-          role="img"
-          muted
-          loop
-          playsinline
-          preload="none"
-        ></video>
-        <video
-          src="rower_videos/mug.mp4"
-          poster="rower_images/mug.png"
-          width="500"
-          height="500"
-          aria-label="Mug"
-          role="img"
-          muted
-          loop
-          playsinline
-          preload="none"
-        ></video>
-        <video
-          src="rower_videos/battery.mp4"
-          poster="rower_images/battery.png"
-          width="500"
-          height="500"
-          aria-label="Battery"
-          role="img"
-          muted
-          loop
-          playsinline
-          preload="none"
-        ></video>
-        <video
-          src="rower_videos/thermometer.mp4"
-          poster="rower_images/thermometer.png"
-          width="500"
-          height="500"
-          aria-label="Thermometer"
-          role="img"
-          muted
-          loop
-          playsinline
-          preload="none"
-        ></video>
-        <video
-          src="rower_videos/progress_bar.mp4"
-          poster="rower_images/progress_bar.png"
-          width="500"
-          height="500"
-          aria-label="Progress Bar"
-          role="img"
-          muted
-          loop
-          playsinline
-          preload="none"
-        ></video>
-        <video
-          src="rower_videos/fuel_gauge.mp4"
-          poster="rower_images/fuel_gauge.png"
-          width="500"
-          height="500"
-          aria-label="Fuel Gauge"
-          role="img"
-          muted
-          loop
-          playsinline
-          preload="none"
-        ></video>
+        <figure>
+          <video
+            src="rower_videos/wifi_bars.mp4"
+            poster="rower_images/wifi_bars.png"
+            width="500"
+            height="500"
+            aria-label="WiFi Bars"
+            role="img"
+            muted
+            loop
+            playsinline
+            preload="none"
+          ></video>
+          <figcaption>WiFi Bars</figcaption>
+        </figure>
+        <figure>
+          <video
+            src="rower_videos/mug.mp4"
+            poster="rower_images/mug.png"
+            width="500"
+            height="500"
+            aria-label="Mug"
+            role="img"
+            muted
+            loop
+            playsinline
+            preload="none"
+          ></video>
+          <figcaption>Mug</figcaption>
+        </figure>
+        <figure>
+          <video
+            src="rower_videos/battery.mp4"
+            poster="rower_images/battery.png"
+            width="500"
+            height="500"
+            aria-label="Battery"
+            role="img"
+            muted
+            loop
+            playsinline
+            preload="none"
+          ></video>
+          <figcaption>Battery</figcaption>
+        </figure>
+        <figure>
+          <video
+            src="rower_videos/thermometer.mp4"
+            poster="rower_images/thermometer.png"
+            width="500"
+            height="500"
+            aria-label="Thermometer"
+            role="img"
+            muted
+            loop
+            playsinline
+            preload="none"
+          ></video>
+          <figcaption>Thermometer</figcaption>
+        </figure>
+        <figure>
+          <video
+            src="rower_videos/progress_bar.mp4"
+            poster="rower_images/progress_bar.png"
+            width="500"
+            height="500"
+            aria-label="Progress Bar"
+            role="img"
+            muted
+            loop
+            playsinline
+            preload="none"
+          ></video>
+          <figcaption>Progress Bar</figcaption>
+        </figure>
+        <figure>
+          <video
+            src="rower_videos/fuel_gauge.mp4"
+            poster="rower_images/fuel_gauge.png"
+            width="500"
+            height="500"
+            aria-label="Fuel Gauge"
+            role="img"
+            muted
+            loop
+            playsinline
+            preload="none"
+          ></video>
+          <figcaption>Fuel Gauge</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -807,7 +908,7 @@
       </p>
       <div class="tablet">
         <img
-          src="screen_shots/ipad_1.png"
+          src="screen_shots/ipad.png"
           width="1400"
           height="973"
           alt="RowBoRow on iPad"
@@ -838,15 +939,15 @@
     </footer>
     <script>
       // Respect reduced-motion: show the poster and let the viewer press play.
-      var vid = document.querySelector(".phone video");
-      if (
-        vid &&
-        window.matchMedia("(prefers-reduced-motion: reduce)").matches
-      ) {
-        vid.removeAttribute("autoplay");
-        vid.pause();
-        vid.controls = true;
-      }
+      document
+        .querySelectorAll(".phone video, .phone-horiz video")
+        .forEach(function (vid) {
+          if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+            vid.removeAttribute("autoplay");
+            vid.pause();
+            vid.controls = true;
+          }
+        });
     </script>
     <script>
       // Play each character video only while it is on screen
