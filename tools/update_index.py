@@ -39,7 +39,7 @@ for category, items in groups.items():
     out += "      </div>\n"
 
 page = open("index.html").read()
-pattern = re.compile(r'(<section class="characters".*?</p>\n)(.*?)(    </section>)', re.S)
+pattern = re.compile(r'(<section class="characters".*?)(      <h3 class="character-category">.*?)(    </section>)', re.S)
 m = pattern.search(page)
 if not m:
     sys.exit("characters section not found in index.html")
