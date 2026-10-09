@@ -196,9 +196,16 @@
       }
 
       /* iPad-style frame around a landscape screenshot, like the iPhone frame */
+      .tablets {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 24px;
+      }
+
       .tablet {
-        width: 100%;
-        max-width: 720px;
+        flex: 1 1 380px;
+        max-width: 480px;
         margin: 0 auto;
         padding: 14px;
         background: var(--phone);
@@ -912,13 +919,23 @@
         On an iPad, RowBoRow can run in a window allowing you to follow along
         while using other rowing apps such as ErgData or ErgZone.
       </p>
-      <div class="tablet">
-        <img
-          src="screen_shots/ipad.png"
-          width="1400"
-          height="973"
-          alt="RowBoRow on iPad"
-        />
+      <div class="tablets">
+        <div class="tablet">
+          <img
+            src="screen_shots/ipad_ergdata_horizontal.png"
+            width="2360"
+            height="1640"
+            alt="RowBoRow on iPad alongside ErgData"
+          />
+        </div>
+        <div class="tablet">
+          <img
+            src="screen_shots/ipad_ergzone_overlay_horizontal.png"
+            width="2360"
+            height="1640"
+            alt="RowBoRow on iPad overlaying ErgZone"
+          />
+        </div>
       </div>
     </section>
 
