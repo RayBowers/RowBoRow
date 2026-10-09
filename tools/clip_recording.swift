@@ -1,5 +1,5 @@
 // Turns a simulator screen recording into the site's one-stroke video and poster.
-// Usage: [ROTATE=ccw] swift clip_recording.swift <in.mov> <out.mp4> <out.png> <width> <height> [seconds=3] [poster_seconds=0.5]
+// Usage: [ROTATE=ccw|cw] swift clip_recording.swift <in.mov> <out.mp4> <out.png> <width> <height> [seconds=3] [poster_seconds=0.5]
 // The recording must contain the moment rowing is started with a tap while the rower was stopped:
 // the clip starts at the first frame that moves after the last stretch of stillness (the catch),
 // runs for <seconds> (one stroke), and the poster is the frame <poster_seconds> in (halfway
@@ -24,11 +24,12 @@ struct Frame { let t: Double; let image: CGImage; let sig: [UInt8] }
 // No color management: keep the recording's pixel values exactly as the app drew them.
 let ciContext = CIContext(options: [.workingColorSpace: NSNull(), .outputColorSpace: NSNull()])
 
-// Set ROTATE=ccw when the app was recorded in landscape: the simulator's framebuffer stays portrait.
-let rotate = ProcessInfo.processInfo.environment["ROTATE"] == "ccw"
+// Set ROTATE=ccw or cw when the app was recorded in landscape: the simulator's framebuffer stays portrait,
+// and which way the content is turned depends on which way the device was rotated.
+let rotate = ["ccw": CGImagePropertyOrientation.left, "cw": .right][ProcessInfo.processInfo.environment["ROTATE"] ?? ""]
 func source(_ pb: CVPixelBuffer) -> CIImage {
     var ci = CIImage(cvPixelBuffer: pb)
-    if rotate { ci = ci.oriented(.left); ci = ci.transformed(by: CGAffineTransform(translationX: -ci.extent.minX, y: -ci.extent.minY)) }
+    if let rotate { ci = ci.oriented(rotate); ci = ci.transformed(by: CGAffineTransform(translationX: -ci.extent.minX, y: -ci.extent.minY)) }
     return ci
 }
 
