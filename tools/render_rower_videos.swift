@@ -78,10 +78,10 @@ func slug(_ name: String) -> String {
         guard CommandLine.arguments.count == 2 else { print("usage: render_rower_videos <out_dir>"); exit(1) }
         let dir = URL(fileURLWithPath: CommandLine.arguments[1])
         try! FileManager.default.createDirectory(at: dir, withIntermediateDirectories: true)
-        // manifest.json lists the characters in picker order (category order, then case order).
+        // manifest.json lists the characters in picker order (group order from FigureCategory, figures alphabetical within a group; see Figure.ordered).
         var manifest: [[String: String]] = []
-        for category in FigureCategory.allCases {
-            for figure in Figure.allCases where figure.category == category {
+        for category in FigureCategory.ordered {
+            for figure in Figure.ordered(in: category) {
                 let name = slug(figure.name)
                 await render(figure, to: dir.appendingPathComponent("\(name).mp4"))
                 manifest.append(["file": name, "name": figure.name, "category": category.rawValue])
