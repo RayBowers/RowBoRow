@@ -13,7 +13,7 @@ let frames = 90
 let ratio = 2.0
 let cyan = Color(red: 73 / 255, green: 224 / 255, blue: 250 / 255)
 
-/// "T. rex" -> "t_rex", "WiFi Bars" -> "wifi_bars", "Handle, vertical" -> "handle_vertical"
+/// "T. rex" -> "t_rex", "WiFi Bars" -> "wifi_bars", "Handle (vertical)" -> "handle_vertical"
 func slug(_ name: String) -> String {
     name.lowercased()
         .map { $0.isLetter || $0.isNumber ? String($0) : "_" }.joined()

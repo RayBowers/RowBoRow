@@ -26,64 +26,65 @@
     <meta name="twitter:title" content="RowBoRow" />
     <meta
       name="twitter:description"
-      content="Set your stroke rate and follow along!"
+      content="RowBoRow is a visual metronome for indoor rowers. Set your stroke rate and follow along without drifting."
     />
     <meta
       name="twitter:image"
       content="https://raybowers.github.io/RowBoRow/og-image.png"
     />
+    <meta name="theme-color" content="#f6f8fb" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0f141a" media="(prefers-color-scheme: dark)" />
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "RowBoRow",
+        "description": "A visual metronome for indoor rowers. Set your stroke rate and row in time with an animated rower.",
+        "applicationCategory": "SportsApplication",
+        "operatingSystem": "iOS 17 or later, iPadOS 17 or later",
+        "url": "https://raybowers.github.io/RowBoRow/",
+        "image": "https://raybowers.github.io/RowBoRow/og-image.png",
+        "author": { "@type": "Person", "name": "Ray Bowers" },
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+      }
+    </script>
+    <link rel="stylesheet" href="site.css" />
     <style>
-      :root {
-        --bg: #f6f8fb;
-        --text: #1b2430;
-        --muted: #5b6676;
-        --accent: #1559c7;
-        --phone: #111;
-      }
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --bg: #0f141a;
-          --text: #e8edf3;
-          --muted: #9aa6b4;
-          --accent: #58a6ff;
-          --phone: #000;
-        }
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      a:focus-visible {
-        outline: 3px solid var(--accent);
-        outline-offset: 2px;
-      }
-
       @media (prefers-reduced-motion: reduce) {
         html {
           scroll-behavior: auto;
         }
       }
 
-      body {
-        margin: 0;
-        font-family:
-          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-          Arial, sans-serif;
-        background: var(--bg);
-        color: var(--text);
-        line-height: 1.6;
-      }
-
-      main {
+      .hero {
         max-width: 1000px;
         margin: 0 auto;
         padding: 48px 16px;
         display: flex;
         align-items: center;
         gap: 56px;
+      }
+
+      .site-nav {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 16px 16px 0;
+        display: flex;
+        justify-content: flex-end;
+        gap: 20px;
+        font-size: 0.95rem;
+      }
+
+      .site-nav a {
+        color: var(--accent);
+        font-weight: 600;
+        text-decoration: none;
+      }
+
+      .site-nav a:hover {
+        text-decoration: underline;
       }
 
       .text {
@@ -341,24 +342,9 @@
         font-weight: 600;
       }
 
-      footer {
-        text-align: center;
-        color: var(--muted);
-        font-size: 0.9rem;
-        padding: 24px 16px 40px;
-      }
-
-      footer p {
-        margin: 0 0 8px;
-      }
-
-      footer a {
-        color: var(--accent);
-      }
-
       /* Stack the text above the phone on narrow screens */
       @media (max-width: 760px) {
-        main,
+        .hero,
         .controls {
           flex-direction: column;
           text-align: center;
@@ -378,10 +364,18 @@
     </style>
   </head>
   <body>
-    <main>
+    <a class="skip-link" href="#content">Skip to content</a>
+    <nav class="site-nav" aria-label="Site">
+      <a href="faq.html">FAQ</a>
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+
+    <main id="content">
+    <div class="hero">
       <div class="text">
         <h1>RowBoRow</h1>
-        <p class="tagline">Visual metronome for rowers!</p>
+        <p class="tagline">Visual metronome for rowers</p>
         <p>
           RowBoRow is a visual metronome for indoor rowers. Set your stroke
           rate, then row in time with the animation, so you can focus on your
@@ -413,7 +407,7 @@
           <source src="screen_shots/main_vertical.mp4" type="video/mp4" />
         </video>
       </div>
-    </main>
+    </div>
 
     <div class="phone-horiz">
       <video
@@ -452,11 +446,9 @@
         <figure>
           <video
             src="rower_videos/stick_figure.mp4"
-            poster="rower_images/stick_figure.png"
+            data-poster="rower_images/stick_figure.png"
             width="500"
             height="500"
-            aria-label="Stick Figure"
-            role="img"
             muted
             loop
             playsinline
@@ -467,32 +459,28 @@
         <figure>
           <video
             src="rower_videos/handle_horizontal.mp4"
-            poster="rower_images/handle_horizontal.png"
+            data-poster="rower_images/handle_horizontal.png"
             width="500"
             height="500"
-            aria-label="Handle, horizontal"
-            role="img"
             muted
             loop
             playsinline
             preload="none"
           ></video>
-          <figcaption>Handle, horizontal</figcaption>
+          <figcaption>Handle (horizontal)</figcaption>
         </figure>
         <figure>
           <video
             src="rower_videos/handle_vertical.mp4"
-            poster="rower_images/handle_vertical.png"
+            data-poster="rower_images/handle_vertical.png"
             width="500"
             height="500"
-            aria-label="Handle, vertical"
-            role="img"
             muted
             loop
             playsinline
             preload="none"
           ></video>
-          <figcaption>Handle, vertical</figcaption>
+          <figcaption>Handle (vertical)</figcaption>
         </figure>
       </div>
       <h3 class="character-category">Adventurers</h3>
@@ -500,11 +488,9 @@
         <figure>
           <video
             src="rower_videos/knight.mp4"
-            poster="rower_images/knight.png"
+            data-poster="rower_images/knight.png"
             width="500"
             height="500"
-            aria-label="Knight"
-            role="img"
             muted
             loop
             playsinline
@@ -515,11 +501,9 @@
         <figure>
           <video
             src="rower_videos/pirate.mp4"
-            poster="rower_images/pirate.png"
+            data-poster="rower_images/pirate.png"
             width="500"
             height="500"
-            aria-label="Pirate"
-            role="img"
             muted
             loop
             playsinline
@@ -530,11 +514,9 @@
         <figure>
           <video
             src="rower_videos/viking.mp4"
-            poster="rower_images/viking.png"
+            data-poster="rower_images/viking.png"
             width="500"
             height="500"
-            aria-label="Viking"
-            role="img"
             muted
             loop
             playsinline
@@ -545,11 +527,9 @@
         <figure>
           <video
             src="rower_videos/wizard.mp4"
-            poster="rower_images/wizard.png"
+            data-poster="rower_images/wizard.png"
             width="500"
             height="500"
-            aria-label="Wizard"
-            role="img"
             muted
             loop
             playsinline
@@ -563,11 +543,9 @@
         <figure>
           <video
             src="rower_videos/grandma.mp4"
-            poster="rower_images/grandma.png"
+            data-poster="rower_images/grandma.png"
             width="500"
             height="500"
-            aria-label="Grandma"
-            role="img"
             muted
             loop
             playsinline
@@ -578,11 +556,9 @@
         <figure>
           <video
             src="rower_videos/grandpa.mp4"
-            poster="rower_images/grandpa.png"
+            data-poster="rower_images/grandpa.png"
             width="500"
             height="500"
-            aria-label="Grandpa"
-            role="img"
             muted
             loop
             playsinline
@@ -593,11 +569,9 @@
         <figure>
           <video
             src="rower_videos/man.mp4"
-            poster="rower_images/man.png"
+            data-poster="rower_images/man.png"
             width="500"
             height="500"
-            aria-label="Man"
-            role="img"
             muted
             loop
             playsinline
@@ -608,11 +582,9 @@
         <figure>
           <video
             src="rower_videos/woman.mp4"
-            poster="rower_images/woman.png"
+            data-poster="rower_images/woman.png"
             width="500"
             height="500"
-            aria-label="Woman"
-            role="img"
             muted
             loop
             playsinline
@@ -626,11 +598,9 @@
         <figure>
           <video
             src="rower_videos/dragon.mp4"
-            poster="rower_images/dragon.png"
+            data-poster="rower_images/dragon.png"
             width="500"
             height="500"
-            aria-label="Dragon"
-            role="img"
             muted
             loop
             playsinline
@@ -641,11 +611,9 @@
         <figure>
           <video
             src="rower_videos/snowman.mp4"
-            poster="rower_images/snowman.png"
+            data-poster="rower_images/snowman.png"
             width="500"
             height="500"
-            aria-label="Snowman"
-            role="img"
             muted
             loop
             playsinline
@@ -659,11 +627,9 @@
         <figure>
           <video
             src="rower_videos/alien.mp4"
-            poster="rower_images/alien.png"
+            data-poster="rower_images/alien.png"
             width="500"
             height="500"
-            aria-label="Alien"
-            role="img"
             muted
             loop
             playsinline
@@ -674,11 +640,9 @@
         <figure>
           <video
             src="rower_videos/astronaut.mp4"
-            poster="rower_images/astronaut.png"
+            data-poster="rower_images/astronaut.png"
             width="500"
             height="500"
-            aria-label="Astronaut"
-            role="img"
             muted
             loop
             playsinline
@@ -689,11 +653,9 @@
         <figure>
           <video
             src="rower_videos/robot.mp4"
-            poster="rower_images/robot.png"
+            data-poster="rower_images/robot.png"
             width="500"
             height="500"
-            aria-label="Robot"
-            role="img"
             muted
             loop
             playsinline
@@ -707,11 +669,9 @@
         <figure>
           <video
             src="rower_videos/ghost.mp4"
-            poster="rower_images/ghost.png"
+            data-poster="rower_images/ghost.png"
             width="500"
             height="500"
-            aria-label="Ghost"
-            role="img"
             muted
             loop
             playsinline
@@ -722,11 +682,9 @@
         <figure>
           <video
             src="rower_videos/mummy.mp4"
-            poster="rower_images/mummy.png"
+            data-poster="rower_images/mummy.png"
             width="500"
             height="500"
-            aria-label="Mummy"
-            role="img"
             muted
             loop
             playsinline
@@ -737,11 +695,9 @@
         <figure>
           <video
             src="rower_videos/skeleton.mp4"
-            poster="rower_images/skeleton.png"
+            data-poster="rower_images/skeleton.png"
             width="500"
             height="500"
-            aria-label="Skeleton"
-            role="img"
             muted
             loop
             playsinline
@@ -752,11 +708,9 @@
         <figure>
           <video
             src="rower_videos/vampire.mp4"
-            poster="rower_images/vampire.png"
+            data-poster="rower_images/vampire.png"
             width="500"
             height="500"
-            aria-label="Vampire"
-            role="img"
             muted
             loop
             playsinline
@@ -767,11 +721,9 @@
         <figure>
           <video
             src="rower_videos/witch.mp4"
-            poster="rower_images/witch.png"
+            data-poster="rower_images/witch.png"
             width="500"
             height="500"
-            aria-label="Witch"
-            role="img"
             muted
             loop
             playsinline
@@ -785,11 +737,9 @@
         <figure>
           <video
             src="rower_videos/frog.mp4"
-            poster="rower_images/frog.png"
+            data-poster="rower_images/frog.png"
             width="500"
             height="500"
-            aria-label="Frog"
-            role="img"
             muted
             loop
             playsinline
@@ -800,11 +750,9 @@
         <figure>
           <video
             src="rower_videos/octopus.mp4"
-            poster="rower_images/octopus.png"
+            data-poster="rower_images/octopus.png"
             width="500"
             height="500"
-            aria-label="Octopus"
-            role="img"
             muted
             loop
             playsinline
@@ -815,11 +763,9 @@
         <figure>
           <video
             src="rower_videos/penguin.mp4"
-            poster="rower_images/penguin.png"
+            data-poster="rower_images/penguin.png"
             width="500"
             height="500"
-            aria-label="Penguin"
-            role="img"
             muted
             loop
             playsinline
@@ -830,11 +776,9 @@
         <figure>
           <video
             src="rower_videos/t_rex.mp4"
-            poster="rower_images/t_rex.png"
+            data-poster="rower_images/t_rex.png"
             width="500"
             height="500"
-            aria-label="T. rex"
-            role="img"
             muted
             loop
             playsinline
@@ -848,11 +792,9 @@
         <figure>
           <video
             src="rower_videos/battery.mp4"
-            poster="rower_images/battery.png"
+            data-poster="rower_images/battery.png"
             width="500"
             height="500"
-            aria-label="Battery"
-            role="img"
             muted
             loop
             playsinline
@@ -863,11 +805,9 @@
         <figure>
           <video
             src="rower_videos/fuel_gauge.mp4"
-            poster="rower_images/fuel_gauge.png"
+            data-poster="rower_images/fuel_gauge.png"
             width="500"
             height="500"
-            aria-label="Fuel Gauge"
-            role="img"
             muted
             loop
             playsinline
@@ -878,11 +818,9 @@
         <figure>
           <video
             src="rower_videos/mug.mp4"
-            poster="rower_images/mug.png"
+            data-poster="rower_images/mug.png"
             width="500"
             height="500"
-            aria-label="Mug"
-            role="img"
             muted
             loop
             playsinline
@@ -893,11 +831,9 @@
         <figure>
           <video
             src="rower_videos/progress_bar.mp4"
-            poster="rower_images/progress_bar.png"
+            data-poster="rower_images/progress_bar.png"
             width="500"
             height="500"
-            aria-label="Progress Bar"
-            role="img"
             muted
             loop
             playsinline
@@ -908,11 +844,9 @@
         <figure>
           <video
             src="rower_videos/thermometer.mp4"
-            poster="rower_images/thermometer.png"
+            data-poster="rower_images/thermometer.png"
             width="500"
             height="500"
-            aria-label="Thermometer"
-            role="img"
             muted
             loop
             playsinline
@@ -923,11 +857,9 @@
         <figure>
           <video
             src="rower_videos/wifi_bars.mp4"
-            poster="rower_images/wifi_bars.png"
+            data-poster="rower_images/wifi_bars.png"
             width="500"
             height="500"
-            aria-label="WiFi Bars"
-            role="img"
             muted
             loop
             playsinline
@@ -944,7 +876,7 @@
           src="screen_shots/settings.png"
           width="640"
           height="1391"
-          alt="RowBoRow settings panel on iPhone"
+          alt="RowBoRow settings panel on iPhone, showing stroke rate, drive ratio, flip direction, display stats and color choices"
           loading="lazy"
         />
       </div>
@@ -988,7 +920,7 @@
             src="screen_shots/ipad_ergdata_horizontal.png"
             width="2360"
             height="1640"
-            alt="RowBoRow on iPad alongside ErgData"
+            alt="RowBoRow running in a small window on an iPad, beside the ErgData rowing app"
           />
         </div>
         <div class="tablet">
@@ -996,7 +928,7 @@
             src="screen_shots/ipad_ergzone_overlay_horizontal.png"
             width="2360"
             height="1640"
-            alt="RowBoRow on iPad overlaying ErgZone"
+            alt="RowBoRow running in a small window on an iPad, overlapping the ErgZone rowing app"
           />
         </div>
       </div>
@@ -1006,11 +938,11 @@
       <h2>Version History</h2>
       <ul>
         <li>
-          <strong>1.0</strong> (TBD) &ndash; Initial release and basic
+          <strong>1.0</strong> (Coming soon) &ndash; Initial release and basic
           functions with a Stick Figure
         </li>
         <li>
-          <strong>1.1</strong> (Future date) &ndash; Dozens of additional
+          <strong>1.1</strong> (Planned) &ndash; Dozens of additional
           characters, UI enhancements and Apple TV support
         </li>
       </ul>
@@ -1022,18 +954,19 @@
       <p>
         <strong>RowBoRow does not collect any data.</strong> There are no
         accounts, ads, analytics or tracking. Your settings stay on your device
-        and are never sent anywhere. It is simply an animated rower to follow
+        and are never sent anywhere. RowBoRow is just an animated rower to row
         along with.
       </p>
       <p><a href="privacy.html">Read the full privacy policy</a></p>
     </section>
+    </main>
 
     <footer>
       <p>
         <a href="support.html">Support</a> &middot;
         <a href="faq.html">FAQ</a> &middot;
         <a href="privacy.html">Privacy Policy</a> &middot;
-        <a href="mailto:ray@bowers.com?subject=RowBoRow">ray@bowers.com</a>
+        <a href="mailto:ray@bowers.com?subject=RowBoRow%20Support">ray@bowers.com</a>
       </p>
       &copy; 2026 Ray Bowers
     </footer>
@@ -1050,17 +983,44 @@
         });
     </script>
     <script>
-      // Play each character video only while it is on screen
+      // Character videos: load each poster just before it scrolls into view, and play the
+      // video only while it is on screen.
       (function () {
         var vids = document.querySelectorAll(".character-grid video");
-        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-          return;
+        function loadPoster(v) {
+          if (v.dataset.poster) {
+            v.poster = v.dataset.poster;
+            delete v.dataset.poster;
+          }
         }
+        var reduceMotion = window.matchMedia(
+          "(prefers-reduced-motion: reduce)",
+        ).matches;
         if (!("IntersectionObserver" in window)) {
           vids.forEach(function (v) {
-            v.preload = "auto";
-            v.play();
+            loadPoster(v);
+            if (!reduceMotion) {
+              v.preload = "auto";
+              v.play();
+            }
           });
+          return;
+        }
+        var posters = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (e) {
+              if (e.isIntersecting) {
+                loadPoster(e.target);
+                posters.unobserve(e.target);
+              }
+            });
+          },
+          { rootMargin: "800px" },
+        );
+        vids.forEach(function (v) {
+          posters.observe(v);
+        });
+        if (reduceMotion) {
           return;
         }
         var io = new IntersectionObserver(

@@ -1,0 +1,4 @@
+# GitHub Pages builds this site with Jekyll; keep the build scripts out of the published site.
+exclude:
+  - tools
+  - .gitignore

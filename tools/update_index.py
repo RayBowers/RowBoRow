@@ -13,11 +13,9 @@ import sys
 TILE = """        <figure>
           <video
             src="rower_videos/{file}.mp4"
-            poster="rower_images/{file}.png"
+            data-poster="rower_images/{file}.png"
             width="500"
             height="500"
-            aria-label="{label}"
-            role="img"
             muted
             loop
             playsinline
