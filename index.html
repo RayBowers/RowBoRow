@@ -309,26 +309,9 @@
         text-align: center;
       }
 
-      .privacy h2 {
-        font-size: 1.8rem;
-        margin: 0 0 12px;
-      }
-
       .privacy p {
         margin: 0;
         color: var(--muted);
-      }
-
-      .privacy p strong {
-        color: var(--text);
-      }
-
-      .privacy a {
-        color: var(--accent);
-      }
-
-      .privacy p + p {
-        margin-top: 12px;
       }
 
       /* Pill-shaped badge echoing the App Store privacy label */
@@ -340,6 +323,11 @@
         border-radius: 999px;
         color: var(--accent);
         font-weight: 600;
+        text-decoration: none;
+      }
+
+      .privacy a.privacy-label:hover {
+        text-decoration: underline;
       }
 
       /* Stack the text above the phone on narrow screens */
@@ -949,15 +937,7 @@
     </section>
 
     <section class="privacy" id="privacy">
-      <h2>Privacy</h2>
-      <p class="privacy-label">&#10003; Data Not Collected</p>
-      <p>
-        <strong>RowBoRow does not collect any data.</strong> There are no
-        accounts, ads, analytics or tracking. Your settings stay on your device
-        and are never sent anywhere. RowBoRow is just an animated rower to row
-        along with.
-      </p>
-      <p><a href="privacy.html">Read the full privacy policy</a></p>
+      <p><a class="privacy-label" href="privacy.html">&#10003; Data Not Collected</a></p>
     </section>
     </main>
 
