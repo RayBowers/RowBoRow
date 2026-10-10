@@ -6,7 +6,7 @@
     <title>RowBoRow</title>
     <meta
       name="description"
-      content="RowBoRow helps indoor rowers set a stroke rate and follow it without drifting."
+      content="RowBoRow is a visual metronome for indoor rowers. Set your stroke rate and follow along without drifting."
     />
     <link rel="canonical" href="https://raybowers.github.io/RowBoRow/" />
     <meta property="og:type" content="website" />
@@ -14,7 +14,7 @@
     <meta property="og:title" content="RowBoRow" />
     <meta
       property="og:description"
-      content="Set your stroke rate and follow along! RowBoRow helps indoor rowers hold a steady stroke rate without drifting."
+      content="RowBoRow is a visual metronome for indoor rowers. Set your stroke rate and follow along without drifting."
     />
     <meta property="og:url" content="https://raybowers.github.io/RowBoRow/" />
     <meta
@@ -286,6 +286,34 @@
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
       }
 
+      .versions {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 8px 16px 24px;
+        text-align: center;
+      }
+
+      .versions h2 {
+        font-size: 1.8rem;
+        margin: 0 0 12px;
+      }
+
+      .versions ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        text-align: left;
+        color: var(--muted);
+      }
+
+      .versions li + li {
+        margin-top: 12px;
+      }
+
+      .versions strong {
+        color: var(--text);
+      }
+
       .privacy {
         max-width: 600px;
         margin: 0 auto;
@@ -368,17 +396,16 @@
         <h1>RowBoRow</h1>
         <p class="tagline">Visual metronome for rowers!</p>
         <p>
-          RowBoRow is a simple utility to help indoor rowers set a stroke rate
-          and follow along without drifting. Rowing in time with the animation
-          is easy and allows you to focus on your pace, an audio book, a podcast or
-          anything else during your workout.
+          RowBoRow is a visual metronome for indoor rowers. Set your stroke
+          rate, then row in time with the animation, so you can focus on your
+          pace, an audiobook, a podcast or anything else during your workout.
         </p>
         <ul>
-          <li>Tap the rower to start/stop</li>
-          <li>Edit settings under the gear</li>
-          <li>Use Siri to start/stop or adjust stroke rate hands-free!</li>
-          <li>Works on iPhone, iPad, and Mac.</li>
-          <li>Next Release - 30 new animations and Apple TV support!</li>
+          <li>Tap the rower to start or stop.</li>
+          <li>Tap the gear to change settings.</li>
+          <li>Use Siri to start, stop or adjust the stroke rate hands-free.</li>
+          <li>Works on iPhone and iPad, and on Mac as an iPad app.</li>
+          <li><strong>Next Release</strong> &ndash; dozens of new characters and Apple TV support.</li>
         </ul>
         <p class="store">Coming soon to the Apple App Store.</p>
       </div>
@@ -428,7 +455,7 @@
       <p>
         The <strong>Free</strong> characters provide everything you need to use
         this app without paying anything. Additional characters will be
-        available to unlock for a small one time fee. They are entirely optional
+        available to unlock for a small one-time fee. They are entirely optional
         and decorative. No pressure to buy, no ads, no pop-up reminders.
       </p>
       <h3 class="character-category">Free</h3>
@@ -941,11 +968,11 @@
             <strong>Stroke Rate</strong> – set your target strokes per minute
           </li>
           <li>
-            <strong>Drive Ratio</strong> – adjust how long the recovery lasts
-            compared to the drive
+            <strong>Drive Ratio</strong> – set how long the recovery takes
+            compared to the drive (for example 1:2)
           </li>
           <li>
-            <strong>Flip Direction</strong> – flip the direction of the figure
+            <strong>Flip Direction</strong> – mirror the figure to face left or right
           </li>
           <li>
             <strong>Display Stats</strong> – show or hide elapsed time, stroke
@@ -962,8 +989,9 @@
     <section class="ipad">
       <h2>Use with ErgData and ErgZone</h2>
       <p>
-        On an iPad, RowBoRow can run in a window allowing you to follow along
-        while using other rowing apps such as ErgData or ErgZone.
+        On an iPad, RowBoRow can run in a window beside other rowing apps such
+        as ErgData or ErgZone, so you can follow along while you row (requires
+        iPadOS 26 or later).
       </p>
       <div class="tablets">
         <div class="tablet">
@@ -983,6 +1011,20 @@
           />
         </div>
       </div>
+    </section>
+
+    <section class="versions" id="versions">
+      <h2>Version History</h2>
+      <ul>
+        <li>
+          <strong>1.0</strong> (TBD) &ndash; Initial release and basic
+          functions with a Stick Figure
+        </li>
+        <li>
+          <strong>1.1</strong> (Future date) &ndash; Dozens of additional
+          characters, UI enhancements and Apple TV support
+        </li>
+      </ul>
     </section>
 
     <section class="privacy" id="privacy">
