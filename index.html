@@ -129,6 +129,12 @@
         color: var(--accent);
       }
 
+      .store img {
+        display: inline-block;
+        margin-bottom: 8px;
+        vertical-align: bottom;
+      }
+
       /* iPhone-style frame around a vertical screenshot */
       .phone {
         flex: 0 0 auto;
@@ -372,10 +378,21 @@
             <li>Works on iPhone and iPad, and on Mac as an iPad app.</li>
           </ul>
           <p class="store">
-            Now available on the
             <a href="https://apps.apple.com/us/app/rowborow/id6818683002"
-              >Apple App Store</a
-            >. Android is coming soon after.
+              ><picture>
+                <source
+                  srcset="apple_badge/white.svg"
+                  media="(prefers-color-scheme: dark)"
+                />
+                <img
+                  src="apple_badge/black.svg"
+                  alt="Download on the App Store"
+                  width="120"
+                  height="40"
+              /></picture>
+            </a>
+            <br />
+            Android coming soon after.
           </p>
         </div>
 
