@@ -37,9 +37,12 @@ for category, items in groups.items():
     out += "      </div>\n"
 
 page = open("index.html").read()
-pattern = re.compile(r'(<section class="characters".*?)(      <h3 class="character-category">.*?)(    </section>)', re.S)
+pattern = re.compile(r'(<section class="characters".*?\n)([ ]*)(<h3 class="character-category">.*?\n)([ ]*</section>)', re.S)
 m = pattern.search(page)
 if not m:
     sys.exit("characters section not found in index.html")
-open("index.html", "w").write(page[:m.start(2)] + out + page[m.end(2):])
+# The template is written for a 6-space indent; shift it to wherever the page nests the headings.
+extra = " " * (len(m.group(2)) - 6)
+out = "".join(extra + line + "\n" if line else "\n" for line in out.splitlines())
+open("index.html", "w").write(page[:m.start(2)] + out + page[m.start(4):])
 print("index.html: %d characters in %d categories" % (len(manifest), len(groups)))
