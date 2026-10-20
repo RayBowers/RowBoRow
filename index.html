@@ -346,6 +346,34 @@
         text-decoration: underline;
       }
 
+      .versions {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 8px 16px 48px;
+      }
+
+      .versions h2 {
+        font-size: 1.8rem;
+        margin: 0 0 4px;
+        text-align: center;
+      }
+
+      .versions .updated {
+        margin: 0 0 20px;
+        text-align: center;
+        color: var(--muted);
+      }
+
+      .versions ul {
+        margin: 0;
+        padding-left: 1.25em;
+      }
+
+      .versions li {
+        margin: 0 0 12px;
+        color: var(--muted);
+      }
+
       /* Stack the text above the phone on narrow screens */
       @media (max-width: 760px) {
         .hero,
@@ -372,7 +400,6 @@
     <nav class="site-nav" aria-label="Site">
       <a href="support.html">Support</a>
       <a href="faq.html">FAQ</a>
-      <a href="history.html">History</a>
       <a href="privacy.html">Privacy</a>
     </nav>
 
@@ -432,24 +459,30 @@
       <section class="why" id="why">
         <h2>Why RowBoRow?</h2>
         <p>
-          I like having someone to row along with. Doesn't even have to be a big
-          animation -- just a small window in the corner of my iPad so I can
-          follow along. I have spent
+          At work, I am a Senior Data Engineer, and spend all my time processing
+          data. I recently wanted to have some fun at home learning Swift, and
+          since I love rowing, this felt like a fun project to try.
+        </p>
+        <p>
+          I enjoy having a visual to row along with while listening to audio
+          books, music, or even watching shows. I have spent
           <strong>many hours</strong> following the Stick Figure while I focus
           on other things. That said, I have to admit, the
           <strong>Pirate and Alien</strong> are my new favorites!
         </p>
         <p>
-          I wish ErgData and/or ErgZone would add a simple capability like this
-          into their displays. They could automate changing spm with each
-          different interval. Since they have not, I made my own app and added
-          voice commands so I can change the rate without stopping.
+          Besides fun characters to follow, I also made this so I can control
+          the app with voice comments and be able to change settings without
+          stopping.
         </p>
         <p>
           Let me know if there are any other features you would like to see.
           <a href="mailto:ray@bowers.com?subject=RowBoRow%20Support"
             >ray@bowers.com</a
-          >. Feel free to add me as a training partner on the
+          >.
+        </p>
+        <p>
+          Feel free to look me up on the
           <a href="https://log.concept2.com/profile/2385879"
             >Concept2 Logbook</a
           >
@@ -472,7 +505,7 @@
       </section>
 
       <section class="characters" id="characters">
-        <h2>Character Options</h2>
+        <h2>Characters</h2>
         <p>Pick from 45 characters to row with!</p>
         <p>
           The Free characters, a Stick Figure and two rowing handles,
@@ -1118,8 +1151,9 @@
               <strong>Stroke Rate</strong> – set your target strokes per minute
             </li>
             <li>
-              <strong>Drive Ratio</strong> – set how long the recovery takes
-              compared to the drive (for example 1:2)
+              <strong>Drive Ratio</strong> – set how long the drive takes
+              compared to the recovery (for example 1 count drive, 2 counts
+              recovery is 1:2). Ranges from 1:1.0 to 1:3.0 in 0.1 increments.
             </li>
             <li>
               <strong>Flip Direction</strong> – mirror the figure to face
@@ -1170,6 +1204,36 @@
         </div>
       </section>
 
+      <section class="versions" id="versions">
+        <h2>Version History</h2>
+        <p class="updated">Public releases and planned versions</p>
+        <ul>
+          <li>
+            <strong>1.0 for iOS (iPhone, iPad, Mac)</strong> - October 14, 2026
+            &ndash; Initial public release with basic functions with a Stick
+            Figure.
+          </li>
+          <li>
+            <strong>1.1 for iOS (iPhone, iPad, Mac)</strong> - October 15, 2026
+            &ndash; Dozens of new characters (unlock with a one-time purchase
+            after a 14-day free trial), two new Free rowing handles, and UI
+            enhancements.
+          </li>
+          <li>
+            <strong>1.1 for tvOS (Apple TV)</strong> - October 19, 2026 &ndash;
+            Added Apple TV support.
+          </li>
+          <li>
+            <strong>1.2 for iOS/tvOS - Coming Soon</strong> &ndash; Additional
+            characters and fixes
+          </li>
+          <li>
+            <strong>1.2 for Android - Expected, Early November</strong> &ndash;
+            Android support
+          </li>
+        </ul>
+      </section>
+
       <section class="privacy" id="privacy">
         <p>
           <a class="privacy-label" href="privacy.html"
@@ -1183,7 +1247,6 @@
       <p>
         <a href="support.html">Support</a> &middot;
         <a href="faq.html">FAQ</a> &middot;
-        <a href="history.html">History</a> &middot;
         <a href="privacy.html">Privacy Policy</a> &middot;
         <a href="mailto:ray@bowers.com?subject=RowBoRow%20Support"
           >ray@bowers.com</a
