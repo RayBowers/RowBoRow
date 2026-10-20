@@ -68,3 +68,39 @@ footer a {
 .skip-link:focus {
   top: 8px;
 }
+
+/* Footer link row with social icons */
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  column-gap: 8px;
+  margin: 0 0 8px;
+}
+
+.footer-links p {
+  margin: 0;
+}
+
+.social {
+  display: flex;
+  gap: 12px;
+}
+
+.social a {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+.social svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  fill: var(--accent);
+}
+
+.social a:hover svg {
+  opacity: 0.75;
+}
